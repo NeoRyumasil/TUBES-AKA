@@ -33,21 +33,35 @@ void insertAccessory(accessory ACC, int totalAccessory){
     }
 }
 
-void data1(character &charaStats){
-    int totalWeapon = 2;
-    int totalArmor = 2;
-    int totalAccessory = 2;
-
+void data1(character &charaStats) {
     charaStats.baseATK = 500;
     charaStats.baseDEF = 100;
     charaStats.baseHP = 1200;
 
-    insertWeapon({"Laevatein", 631}, totalWeapon);
-    insertWeapon({"Excalibur", 544}, totalWeapon);
+    // Tambahkan data senjata
+    insertWeapon({"Laevatein", 631});
+    insertWeapon({"Excalibur", 544});
+    insertWeapon({"Thunder Sword", 720});
+    insertWeapon({"Flame Blade", 675});
+    insertWeapon({"Shadow Dagger", 590});
+    insertWeapon({"Ice Staff", 710});
+    insertWeapon({"Phoenix Bow", 640});
 
-    insertArmor({"Aquarius Imperial Armor", 250, 1606}, totalArmor);
-    insertArmor({"Aries Bustier", 370, 1133}, totalArmor);
+    // Tambahkan data armor
+    insertArmor({"Aquarius Imperial Armor", 250, 1606});
+    insertArmor({"Aries Bustier", 370, 1133});
+    insertArmor({"Knight Plate", 450, 1400});
+    insertArmor({"Golden Shield", 320, 1230});
+    insertArmor({"Steel Breastplate", 400, 1350});
+    insertArmor({"Shadow Cloak", 290, 1100});
+    insertArmor({"Mage Robe", 330, 1000});
 
-    insertAccessory({"Euclase Earth", 188, 857, 300}, totalAccessory);
-    insertAccessory({"Neptune Malachite", 44, 441, 500}, totalAccessory);
+    // Tambahkan data aksesori
+    insertAccessory({"Euclase Earth", 188, 857, 300});
+    insertAccessory({"Neptune Malachite", 44, 441, 500});
+    insertAccessory({"Ring of Strength", 120, 400, 200});
+    insertAccessory({"Amulet of Wisdom", 90, 600, 250});
+    insertAccessory({"Bracelet of Speed", 140, 300, 300});
+    insertAccessory({"Cloak of Shadows", 80, 700, 400});
+    insertAccessory({"Necklace of Power", 200, 500, 350});
 }
