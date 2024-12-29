@@ -3,56 +3,59 @@
 #include <iostream>
 
 void findBestCombinationIterative(int weaponCount, int armorCount, int accessoryCount, character &baseChar) {
-    // Reset semua nilai global
     float bestCombination = 0.0f;
-    string bestWeapon = "";
-    string bestArmor = "";
-    string bestAccessory = "";
-    float finalATK = 0.0f;
-    float finalDEF = 0.0f;
-    float finalHP = 0.0f;
-
     float currentATK, currentDEF, currentHP;
+    string bestWeapon, bestArmor, bestAccessory;
+    float currentCombination = 0;
+    float  attack_total,Def_total,HP_total = 0;
 
-    // Iterate through all possible combinations
+
+    // Iterasi melalui semua kemungkinan kombinasi
     for (int w = 0; w < weaponCount; ++w) {
         for (int a = 0; a < armorCount; ++a) {
             for (int acc = 0; acc < accessoryCount; ++acc) {
-                // Hitung atribut total untuk kombinasi saat ini
-                currentATK = weaponList[w].baseATK + accessoryList[acc].ATK;
-                currentDEF = armorList[a].baseDEF + accessoryList[acc].DEF;
+                // Hitung nilai kombinasi saat ini
+                currentATK = weaponList[w].baseAttack + accessoryList[acc].ATK;
+                currentDEF = armorList[a].baseDefend + accessoryList[acc].DEF;
                 currentHP = accessoryList[acc].HP + armorList[a].baseHP;
 
-                // Evaluasi kombinasi saat ini
-                float currentCombination = currentATK + currentDEF + currentHP;
+                currentCombination = currentATK + currentDEF + currentHP;
 
-                // Periksa apakah kombinasi ini lebih baik dari yang sebelumnya
+                // Periksa apakah kombinasi ini adalah yang terbaik
                 if (currentCombination > bestCombination) {
                     bestCombination = currentCombination;
+                    bestAccessory = accessoryList[acc].itemName;
                     bestWeapon = weaponList[w].itemName;
                     bestArmor = armorList[a].itemName;
-                    bestAccessory = accessoryList[acc].itemName;
-                    finalATK = currentATK;
-                    finalDEF = currentDEF;
-                    finalHP = currentHP;
+                    attack_total = currentATK;
+                    Def_total = currentDEF;
+                    HP_total= currentHP;
+
                 }
             }
         }
     }
 
     // Output hasil
-    cout << "Before power-up:" << endl;
-    cout << "ATK: " << baseChar.baseATK << endl;
-    cout << "DEF: " << baseChar.baseDEF << endl;
-    cout << "HP: " << baseChar.baseHP << endl;
+    cout << "\n=== Before Power-Up ===\n";
+    cout << "ATK: " << baseChar.baseATK << "\n";
+    cout << "DEF: " << baseChar.baseDEF << "\n";
+    cout << "HP: " << baseChar.baseHP << "\n";
 
-    cout << "\nAfter power-up:" << endl;
-    cout << "ATK: " << finalATK + baseChar.baseATK << endl;
-    cout << "DEF: " << finalDEF + baseChar.baseDEF << endl;
-    cout << "HP: " << finalHP + baseChar.baseHP << endl;
+    cout << "\n=== After Power-Up ===\n";
+    cout << "ATK: " << attack_total + baseChar.baseATK << "\n";
+    cout << "DEF: " << Def_total + baseChar.baseDEF << "\n";
+    cout << "HP: " << HP_total + baseChar.baseHP << "\n";
 
-    // Menampilkan kombinasi terkuat
-    cout << "\nStrongest Combination: " << bestWeapon << ", "
-         << bestArmor << ", " << bestAccessory
-         << " value: " << bestCombination << endl;
+    cout << "\n=== Strongest Combination ===\n";
+    cout << "Character get power-up: "<<endl;
+    cout << "ATTACK: "<<attack_total<<endl;
+    cout << "DEFENSE: "<<Def_total<<endl;
+    cout << "ATTACK: "<<HP_total<<endl;
+    cout << "Total Value: " << bestCombination << "\n";
+    cout <<endl;
+    cout << "Items: "<<endl;
+    cout << "Weapon: " << bestWeapon <<" value: "<< "\n";
+    cout << "Armor: " << bestArmor << "\n";
+    cout << "Accessory: " << bestAccessory << "\n";
 }
