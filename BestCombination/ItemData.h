@@ -41,6 +41,8 @@ extern armor armorList[10];
 extern accessory accessoryList[10];
 
 void data1(character &charaStats);
+void data2(character &charaStats);
+void data3(character &charaStats);
 void insertWeapon(weapon WEA, int totalWeapon);
 void insertArmor(armor ARM, int totalWeapon);
 void insertAccessory(accessory ACC, int totalWeapon);
