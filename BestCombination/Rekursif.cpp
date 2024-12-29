@@ -4,34 +4,31 @@
 
 using namespace std;
 
-// Helper function to find the index of a weapon in weaponList
 int findWeaponIndex(const weapon &W) {
     for (int i = 0; i < weaponCount; ++i) {
         if (weaponList[i].itemName == W.itemName) {
             return i;
         }
     }
-    return -1;  // Return -1 if not found
+    return -1; 
 }
 
-// Helper function to find the index of an armor in armorList
 int findArmorIndex(const armor &A) {
     for (int i = 0; i < armorCount; ++i) {
         if (armorList[i].itemName == A.itemName) {
             return i;
         }
     }
-    return -1;  // Return -1 if not found
+    return -1;
 }
 
-// Helper function to find the index of an accessory in accessoryList
 int findAccessoryIndex(const accessory &A) {
     for (int i = 0; i < accessoryCount; ++i) {
         if (accessoryList[i].itemName == A.itemName) {
             return i;
         }
     }
-    return -1;  // Return -1 if not found
+    return -1; 
 }
 
 float hitungKekuatanCharacter(int indexWeapon, int indexArmor, int indexAccessory, character &baseStats){
