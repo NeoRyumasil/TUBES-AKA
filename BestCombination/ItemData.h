@@ -40,9 +40,9 @@ extern weapon weaponList[10];
 extern armor armorList[10];
 extern accessory accessoryList[10];
 
-void data1(character &charaStats);
-void data2(character &charaStats);
-void data3(character &charaStats);
+void data1(character &charaStats); //data ada 9
+void data2(character &charaStats); //data ada 12
+void data3(character &charaStats); //data ada 27
 void insertWeapon(weapon WEA, int totalWeapon);
 void insertArmor(armor ARM, int totalWeapon);
 void insertAccessory(accessory ACC, int totalWeapon);
